@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<h5>Upload image</h5>
+<div class="row justify-content-start">
+  <div class="col-6 col-sm-2">
+    <form name="form" (ngSubmit)="upload()">
+      <div class="form-group" >
+        <label for="label">Please chose a image to upload.</label>
+        <input type="file" class="form-control-file" id="label" (change)="onFileSelected($event)">
+        <div class="progress">
+          <div class="progress-bar bg-info" role="progressbar" [style.width]="progress"></div>
+        </div>
+        <small id="info" class="form-text" [style.visibility]="visible" [style.color]="'info'">Uploaded successfully!</small>
+        <button type="submit" class="btn btn-outline-secondary btn-sm">Upload</button>
+      </div>
+    </form>
+  </div>
+</div>

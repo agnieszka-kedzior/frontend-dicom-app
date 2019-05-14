@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<h5>Image Dashboard</h5>
+<div class="card">
+  <div class="card-body">
+    File name and details.
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    File name and details.
+  </div>
+</div>
+<form name="form" (ngSubmit)="viewImage()">
+  <div class="form-group" >
+    <button type="submit" class="btn btn-outline-secondary btn-sm">Download</button>
+  </div>
+</form>
+<img [src]="imageToShow"
+     alt="Place image title"
+     *ngIf="!isImageLoading">
+
+

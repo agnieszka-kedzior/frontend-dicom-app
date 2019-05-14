@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="no-gutters">
+  <h4>Sign In</h4>
+  <div class="row justify-content-start">
+    <div class="col-6 col-sm-2">
+      <form name="form" (ngSubmit)="login(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" ngModel class="form-control" placeholder="Enter username">
+          <small id="usernameInfo" class="form-text text-muted">Thank you for login!</small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
