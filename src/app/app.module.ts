@@ -13,6 +13,8 @@ import {AppAuthService} from './app-auth.service';
 import {AuthGuard} from './auth.guard';
 import {FormsModule} from '@angular/forms';
 import { PictureComponent } from './picture/picture.component';
+import { FramesComponent } from './frames/frames.component';
+import {AppShareService} from './app-share.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PictureComponent } from './picture/picture.component';
     DashboardComponent,
     UploadComponent,
     HomeComponent,
-    PictureComponent
+    PictureComponent,
+    FramesComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { PictureComponent } from './picture/picture.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AppAuthService, AuthGuard],
+  providers: [AppAuthService, AppShareService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

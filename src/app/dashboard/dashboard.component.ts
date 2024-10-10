@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AppAuthService} from '../app-auth.service';
 
@@ -8,31 +8,20 @@ import {AppAuthService} from '../app-auth.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  listOfImages: any;
 
-  imageToShow: any;
-  isImageLoading: boolean;
-  constructor(private router: Router, private appAuthService:  AppAuthService) { }
+  constructor(private router: Router, private appAuthService: AppAuthService) {
+  }
 
   ngOnInit() {
+    this.getUserImages();
   }
 
-  viewImage() {
-    this.appAuthService.download().subscribe( data => {
-      this.createImageFromBlob(data);
-      this.isImageLoading = false;
-    }, error => {
-      this.isImageLoading = false;
-      console.log(error);
-    });
+  getUserImages() {
+    this.appAuthService.userImages().subscribe(data => {
+        this.listOfImages = data;
+      },
+      error => console.log(error));
   }
 
-  createImageFromBlob(img: Blob) {
-    const reader = new FileReader();
-    reader.addEventListener('load', () => {
-      this.imageToShow = reader.result;
-    }, false);
-    if (img) {
-      reader.readAsDataURL(img);
-    }
-  }
 }

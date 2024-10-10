@@ -1,3 +1,7 @@
-<p>
-  picture works!
-</p>
+<div class="card" style="width: 18rem;" [routerLink]="['/frame']" (click)="setImageInfo()">
+  <img *ngIf="imageToShow" [src]="imageToShow" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{imageInfo["imageName"]}}</h5>
+    <p class="card-text">Number of frames {{imageInfo["imageNumberOfFrames"]}}</p>
+  </div>
+</div>

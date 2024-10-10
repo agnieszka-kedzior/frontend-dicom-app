@@ -1,3 +1,11 @@
-<p>
-  frames works!
-</p>
+<app-navbar></app-navbar>
+<div class = "container-fluid">
+  <div id="head" class = "row">
+    <div class="col">
+      <h5>Image</h5>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+      <img *ngIf="imageToShow" [src]="imageToShow">
+  </div>
+</div>

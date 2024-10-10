@@ -6,13 +6,15 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {UploadComponent} from './upload/upload.component';
+import {FramesComponent} from './frames/frames.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'home', canActivate: [AuthGuard], component: HomeComponent},
   { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent},
-  { path: 'upload', canActivate: [AuthGuard], component: UploadComponent}
+  { path: 'upload', canActivate: [AuthGuard], component: UploadComponent},
+  { path: 'frame', canActivate: [AuthGuard], component: FramesComponent}
 ];
 
 @NgModule({
